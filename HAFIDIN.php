@@ -19,9 +19,9 @@ if(isset($_POST['submit'])){
     $nim = test_input($_POST["nim"]);
   } 
 
-  if(strlen($_POST['nim']) >10){
+  if(strlen($_POST['nim']) !=10){
     $nimmx = false;
-    $nimErr = "Nim Cannot More Than 10 Character";
+    $nimErr = "Nim Must Be 10 Character";
   }
     
 }
