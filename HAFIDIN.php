@@ -50,8 +50,8 @@ function test_input($data) {
 <?php
 if( !empty($name) and !empty($nim) and $nimmx){
   echo "<h2>Good Morning & Welcome</h2>";
-  echo "Your Name Is #"; echo $name ."#<br>";
-  echo "Your Nim  Is  #"; echo $nim . "#<br>";
+  echo "Your Name Is --"; echo $name ."--<br>";
+  echo "Your Nim  Is  --"; echo $nim . "--<br>";
   echo "Created By : HAFIDHIN";
     }
 ?>
