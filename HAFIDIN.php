@@ -9,15 +9,19 @@ if(isset($_POST['submit'])){
 
   if (empty($_POST["name"])) {
     $nameErr = "Name is required";
-  } 
+  } else {
+    $name = test_input($_POST["name"]);
+  }
   
   if (empty($_POST["nim"])) {
     $nimErr = "Nim is required";
+  } else {
+    $nim = test_input($_POST["nim"]);
   } 
 
   if(strlen($_POST['nim']) >10){
-      $nimmx = false;
-      $nimErr = "Nim Cannot More Than 10 Number";
+    $nimmx = false;
+    $nimErr = "Nim Cannot More Than 10 Character";
   }
     
 }
@@ -31,15 +35,15 @@ function test_input($data) {
 ?>
 
 <h2>Validation Name & Nim</h2>
-<h5>* Required Field</h5>
+<p><span class="error">* required field</span></p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-  Name: <input type="text" name="name" value="<?php echo $name; ?>" > *
-  <?php echo $nameErr; ?>
+  Name: <input type="text" name="name">
+  <span class="error">* <?php echo $nameErr;?></span>
   <br><br>
-  NIM: <input type="number" name="nim" value="<?php echo $nim; ?>" > *
-  <?php echo $nimErr; ?>
+  Nim: <input type="number" name="nim">
+  <span class="error">* <?php echo $nimErr;?></span>
   <br><br>
-  <input type="submit" name="submit" value="SUBMIT">
+  <input type="submit" name="submit" value="Submit">
 </form>
 
 
